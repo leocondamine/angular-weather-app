@@ -1,0 +1,82 @@
+.weatherMain {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 220px;
+  height: 400px;
+  padding: 2rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(8, 7, 42, 1));
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.weatherWidgetRow {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+.temperature {
+  font-size: 32px;
+  margin-top: 1rem;
+}
+
+.city {
+  font-size: 24px;
+  margin-top: 1rem;
+}
+
+.sun {
+  font-size: 54px;
+  color: yellow;
+  filter: drop-shadow(1px 1px 20px yellow);
+}
+
+.moon {
+  font-size: 54px;
+  color: white;
+  filter: drop-shadow(1px 1px 20px white);
+}
+
+.cloud__container {
+  margin-top: -52px;
+  animation: cloudMovement 10s ease-in-out infinite alternate;
+}
+
+.cloud {
+  color: rgb(160, 190, 199);
+  font-size: 48px;
+  filter: drop-shadow(1px 1px 10px rgb(160, 190, 199));
+}
+
+@keyframes cloudMovement {
+  0% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+
+.loading {
+  font-size: 72px;
+  /* background-color: red; */
+  color: white;
+  animation: rotateLoading 0.7s ease-in-out infinite ;
+}
+
+@keyframes rotateLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
