@@ -1,3 +1,6 @@
-<div class="widgetsDisplay">
-    <app-weather-widget-main></app-weather-widget-main>
+<div class="screen">
+  <div class="widgetsDisplay">
+    <app-weather-widget-main [city]="citySearched"></app-weather-widget-main>
+  </div>
+  <app-search-input (searchEvent)="searchEvent($event)"></app-search-input>
 </div>

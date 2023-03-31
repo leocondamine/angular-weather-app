@@ -1,0 +1,9 @@
+<div>
+  <input
+    type="text"
+    placeholder="Enter a city"
+    [(ngModel)]="citySearched"
+    (keyup.enter)="search()"
+  />
+  <button (click)="search()">Search</button>
+</div>

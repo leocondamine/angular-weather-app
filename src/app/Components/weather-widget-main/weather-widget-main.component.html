@@ -1,23 +1,37 @@
 <div *ngIf="!isLoading" class="weatherMain">
-  <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
-    <fa-icon [icon]="sunIcon" class="sun"></fa-icon>
+  <div *ngIf="isFound">
+    <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+      <fa-icon [icon]="sunIcon" class="sun"></fa-icon>
+    </div>
+    <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+      <fa-icon [icon]="moonIcon" class="moon"></fa-icon>
+    </div>
+    <div class="weatherWidgetRow cloud__container">
+      <div *ngIf="!isClear" class="clear"></div>
+      <fa-icon *ngIf="isCloud" [icon]="cloudIcon" class="cloud"></fa-icon>
+      <fa-icon *ngIf="isRain" [icon]="rainIcon" class="rain"></fa-icon>
+      <fa-icon *ngIf="isSnow" [icon]="snowIcon" class="snow"></fa-icon>
+    </div>
+    <div class="weatherWidgetRow temperature">{{ WeatherData.temp }}°</div>
+    <div class="weatherWidgetRow">
+      {{ WeatherData.temp_min }}° / {{ WeatherData.temp_max }}°
+    </div>
+    <div class="weatherWidgetRow">
+      Feels Like: {{ WeatherData.temp_feels_like }}°
+    </div>
+    <div class="weatherWidgetRow city">{{ WeatherData.name }}</div>
+    <div class="weatherWidgetRow">Humidity: {{ WeatherData.humidity }}%</div>
   </div>
-  <div *ngIf="!WeatherData.isDay"class="weatherWidgetRow">
-    <fa-icon [icon]="moonIcon" class="moon"></fa-icon>
+  <div *ngIf="!isFound">
+    <div class="weatherWidgetRow" style="font-weight: 600;">
+      Could not find the location you were looking for
+    </div>
   </div>
-  <div class="weatherWidgetRow cloud__container">
-    <fa-icon [icon]="cloudIcon" class="cloud"></fa-icon>
-  </div>
-  <div class="weatherWidgetRow temperature">{{ WeatherData.temp }}°</div>
-  <div class="weatherWidgetRow">
-    {{ WeatherData.temp_min }}° / {{ WeatherData.temp_max }}°
-  </div>
-  <div class="weatherWidgetRow">
-    Feels Like: {{ WeatherData.temp_feels_like }}°
-  </div>
-  <div class="weatherWidgetRow city">{{ WeatherData.name }}</div>
-  <div class="weatherWidgetRow">Humidity: {{ WeatherData.humidity }}%</div>
 </div>
 <div *ngIf="isLoading" class="weatherMain">
-    <fa-icon [icon]="loadingIcon" class="loading"></fa-icon>
+  <svg class="loading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path
+      d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"
+    />
+  </svg>
 </div>

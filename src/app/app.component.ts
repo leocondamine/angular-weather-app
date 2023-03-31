@@ -3,8 +3,15 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'angular-weather-app';
+
+  citySearched: string = 'grenoble'
+
+  searchEvent(value: string) {
+    this.citySearched = value
+    console.log(this.citySearched)
+  }
 }

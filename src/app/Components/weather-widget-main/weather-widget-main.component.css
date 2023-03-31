@@ -7,9 +7,8 @@
   width: 220px;
   height: 400px;
   padding: 2rem;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(8, 7, 42, 1));
   color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(8, 7, 42, 1));
 }
 
 .weatherWidgetRow {
@@ -43,14 +42,28 @@
 }
 
 .cloud__container {
-  margin-top: -52px;
+  margin-top: -64px;
   animation: cloudMovement 10s ease-in-out infinite alternate;
+}
+
+.clear {
+  height: 48px;
 }
 
 .cloud {
   color: rgb(160, 190, 199);
   font-size: 48px;
   filter: drop-shadow(1px 1px 10px rgb(160, 190, 199));
+}
+.rain {
+  color: rgb(160, 190, 199);
+  font-size: 48px;
+  filter: drop-shadow(1px 1px 10px rgb(160, 190, 199));
+}
+.snow {
+  color: rgb(255, 255, 255);
+  font-size: 48px;
+  filter: drop-shadow(1px 1px 10px rgb(208, 230, 236));
 }
 
 @keyframes cloudMovement {
@@ -63,18 +76,15 @@
 }
 
 .loading {
-  font-size: 72px;
-  /* background-color: red; */
-  color: white;
+  fill: white;
+  height: 50px;
+  width: 50px;
   animation: rotateLoading 0.7s ease-in-out infinite ;
 }
 
 @keyframes rotateLoading {
   0% {
     transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
   }
   100% {
     transform: rotate(360deg);
