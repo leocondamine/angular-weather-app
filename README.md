@@ -4,6 +4,3 @@ Angular Weather App is a web application built using the Angular framework that 
 
 
 ## Test the app here : https://angular-weather-app-leo-condamine.netlify.app/
-
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
